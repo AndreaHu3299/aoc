@@ -19,4 +19,4 @@ You can also join our [private-leaderboard](https://adventofcode.com/2023/leader
 ## Participants
 
 | Name | Language |
-| ---- | -------- |
+| ---- | -------- |[Vincent Weber](https://github.com/RoyalAholdDelhaize/adventofcode-2022/tree/vweber/Typescript) | Typescript |
