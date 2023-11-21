@@ -37,7 +37,7 @@ jobs:
       run: |
         git config user.name "${{ github.actor }}"
         git config user.email "${{ github.event.sender.id}}+${{ github.event.sender.login}}@users.noreply.github.com"
-        echo "[${{ github.event.inputs.full-name }}](https://github.com/RoyalAholdDelhaize/adventofcode-2022/tree/${{ github.actor }}/${{ github.event.inputs.language }}) | ${{ github.event.inputs.language }} |" >> README.md
+        echo "[${{ github.event.inputs.full-name }}](https://github.com/RoyalAholdDelhaize/adventofcode-2023/tree/${{ github.actor }}/${{ github.event.inputs.language }}) | ${{ github.event.inputs.language }} |" >> README.md
         git add .
         git commit -m "Add participant: ${{ github.event.inputs.full-name }}"
         git push origin
