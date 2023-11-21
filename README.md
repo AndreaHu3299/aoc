@@ -21,3 +21,4 @@ You can also join our [private-leaderboard](https://adventofcode.com/2023/leader
 | Name | Language |
 | ---- | -------- |
 [Vincent Weber](https://github.com/RoyalAholdDelhaize/adventofcode-2023/tree/vweber/Typescript) | Typescript |
+[Tijmen Stor](https://github.com/RoyalAholdDelhaize/adventofcode-2023/tree/tijmenstor/Go) | Go |
