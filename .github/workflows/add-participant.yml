@@ -1,0 +1,51 @@
+name: Add Participant
+
+on:
+  workflow_dispatch:
+    inputs:
+      full-name:
+        description: 'Your full name'
+        required: true
+      language:
+        description: 'Language (must not contain spaces)'
+        required: true
+
+jobs:
+  add-participant:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Generate admin token
+        id: token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.AH_DIGITAL_APP_BACKEND_ID }}
+          private_key: ${{ secrets.AH_DIGITAL_APP_BACKEND_KEY }}
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          token: ${{ steps.token.outputs.token }}
+          fetch-depth: 0
+
+      - name: Enable push to protected branch
+        uses: RoyalAholdDelhaize/action-push-to-protected@v1
+        with:
+          token: ${{ steps.token.outputs.token }}
+          branch: ${{ github.event.repository.default_branch }}
+        
+      - name: Write participant to Readme.md
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.event.sender.id}}+${{ github.event.sender.login}}@users.noreply.github.com"
+          echo "[${{ github.event.inputs.full-name }}](https://github.com/RoyalAholdDelhaize/adventofcode-2022/tree/${{ github.actor }}/${{ github.event.inputs.language }}) | ${{ github.event.inputs.language }} |" >> README.md
+          git add .
+          git commit -m "Add participant: ${{ github.event.inputs.full-name }}"
+          git push origin
+
+      - name: Create branch
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          branch: "${{ github.actor }}/${{ github.event.inputs.language }}"
