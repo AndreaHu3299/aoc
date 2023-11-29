@@ -23,3 +23,4 @@ You can also join our [private-leaderboard](https://adventofcode.com/2023/leader
 [Vincent Weber](https://github.com/RoyalAholdDelhaize/adventofcode-2023/tree/vweber/Typescript) | Typescript |
 [Tijmen Stor](https://github.com/RoyalAholdDelhaize/adventofcode-2023/tree/tijmenstor/Go) | Go |
 [Yorick Schellevis](https://github.com/RoyalAholdDelhaize/adventofcode-2023/tree/KingToadz/Kotlin) | Kotlin |
+[Bas Peters](https://github.com/RoyalAholdDelhaize/adventofcode-2023/tree/BasPetersAH/Java) | Java |
