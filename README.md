@@ -26,3 +26,4 @@ You can also join our [private-leaderboard](https://adventofcode.com/2023/leader
 [Bas Peters](https://github.com/RoyalAholdDelhaize/adventofcode-2023/tree/BasPetersAH/Java) | Java |
 [Simon Vriesema](https://github.com/RoyalAholdDelhaize/adventofcode-2023/tree/SimonVriesema/Java) | Java |
 [Dylan Weijgertze](https://github.com/RoyalAholdDelhaize/adventofcode-2023/tree/dylanwe/Kotlin) | Kotlin |
+[Val Nesterov](https://github.com/RoyalAholdDelhaize/adventofcode-2023/tree/wildvalcom/python) | python |
