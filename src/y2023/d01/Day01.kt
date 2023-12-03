@@ -6,18 +6,25 @@ import readInput
 fun main() {
     val classPath = "y2023/d01"
 
+    // fun part1(input: List<String>): Int {
+    //     return input
+    //         .map { line ->
+    //             val digits = line
+    //                 .mapNotNull { it.digitToIntOrNull() }
+    //             val first = digits.first()
+    //             val last = digits.last()
+    //
+    //             listOf(first, last).joinToString(separator = "")
+    //                 .toInt()
+    //         }
+    //         .sum()
+    // }
     fun part1(input: List<String>): Int {
-        return input
-            .map { line ->
-                val digits = line
-                    .mapNotNull { it.digitToIntOrNull() }
-                val first = digits.first()
-                val last = digits.last()
-
-                listOf(first, last).joinToString(separator = "")
-                    .toInt()
-            }
-            .sum()
+        return input.sumOf { line ->
+            val firstDigit = line.find { it.isDigit() }?.toString() ?: "0"
+            val lastDigit = line.findLast { it.isDigit() }?.toString() ?: "0"
+            "$firstDigit$lastDigit".toInt()
+        }
     }
 
     val lookupTable = mapOf(

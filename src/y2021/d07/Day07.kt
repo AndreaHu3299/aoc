@@ -1,17 +1,18 @@
-package template
+package y2021.d03
 
 import println
 import readInput
 
 fun main() {
-    val classPath = "y2023/dX"
+    val classPath = "y2021/d07"
 
     fun part1(input: List<String>): Int {
-        return input.size
+        val crabs = input[0].split(",").map { it.toInt() }
+        return crabs.sum() / crabs.size
     }
 
     fun part2(input: List<String>): Int {
-        return input.size
+        return 0
     }
 
     // test if implementation meets criteria from the description, like:

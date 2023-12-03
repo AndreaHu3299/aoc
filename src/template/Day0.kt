@@ -1,17 +1,17 @@
-package y2023.d02
+package template
 
 import println
 import readInput
 
 fun main() {
-    val classPath = "y2023/dX"
+    val classPath = "y2023/d0X"
 
     fun part1(input: List<String>): Int {
-        return input.size
+        return 0
     }
 
     fun part2(input: List<String>): Int {
-        return input.size
+        return 0
     }
 
     // test if implementation meets criteria from the description, like:
