@@ -6,19 +6,6 @@ import readInput
 fun main() {
     val classPath = "y2023/d01"
 
-    // fun part1(input: List<String>): Int {
-    //     return input
-    //         .map { line ->
-    //             val digits = line
-    //                 .mapNotNull { it.digitToIntOrNull() }
-    //             val first = digits.first()
-    //             val last = digits.last()
-    //
-    //             listOf(first, last).joinToString(separator = "")
-    //                 .toInt()
-    //         }
-    //         .sum()
-    // }
     fun part1(input: List<String>): Int {
         return input.sumOf { line ->
             val firstDigit = line.find { it.isDigit() }?.toString() ?: "0"
@@ -49,29 +36,26 @@ fun main() {
     )
 
     fun part2(input: List<String>): Int {
-        return input
-            .map {
-                val first = lookupTable.keys
-                    .mapNotNull { key -> it.indexOf(key.toString()).let { if (it == -1) null else Pair(key, it) } }
-                    .minBy { it.second }
-                    .let { lookupTable[it.first] }
+        return input.sumOf {
+            val first = lookupTable.keys
+                .mapNotNull { key -> it.indexOf(key.toString()).let { if (it == -1) null else Pair(key, it) } }
+                .minBy { it.second }
+                .let { lookupTable[it.first] }
 
-                val last = lookupTable.keys
-                    .mapNotNull { key -> it.lastIndexOf(key.toString()).let { if (it == -1) null else Pair(key, it) } }
-                    .maxBy { it.second }
-                    .let { lookupTable[it.first] }
+            val last = lookupTable.keys
+                .mapNotNull { key -> it.lastIndexOf(key.toString()).let { if (it == -1) null else Pair(key, it) } }
+                .maxBy { it.second }
+                .let { lookupTable[it.first] }
 
-                listOf(first, last).joinToString(separator = "")
-                    .toInt()
-            }
-            .sum()
+            listOf(first, last).joinToString(separator = "")
+                .toInt()
+        }
     }
 
     // test if implementation meets criteria from the description, like:
     val testInput = readInput("${classPath}/test")
-    // part1(testInput).println()
+    part1(testInput).println()
     part2(testInput).println()
-    // check(part1(testInput) == 1)
 
     val input = readInput("${classPath}/input")
     part1(input).println()

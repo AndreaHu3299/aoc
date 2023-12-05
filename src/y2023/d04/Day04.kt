@@ -1,4 +1,4 @@
-package template
+package y2023.d04
 
 import kotlin.math.pow
 import println

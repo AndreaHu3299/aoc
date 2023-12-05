@@ -1,4 +1,4 @@
-package template
+package y2023.d03
 
 import println
 import readInput
